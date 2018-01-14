@@ -14,19 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Example of a call to a native method
     TextView tv = (TextView) findViewById(R.id.sample_text);
-//    tv.setText(stringFromJNI());
-        JNIUtils ju = new JNIUtils();
-        String tmp  =  ju.stringFromJNI();
-
-        if (tmp.isEmpty())
-        {
-            tmp = "new Failed";
-            tv.setText(tmp);
-        }
-        else
-        {
-            tv.setText(tmp);
-        }
+    tv.setText(stringFromJNI());
     }
 
     /**
@@ -35,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public native String stringFromJNI();
     public native String alphaFx();
+    //public native String stringFromJNI();
 
     // Used to load the 'native-lib' library on application startup.
     static {
